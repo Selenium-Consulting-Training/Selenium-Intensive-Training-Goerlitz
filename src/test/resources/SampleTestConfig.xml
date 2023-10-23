@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<!--======================================================================-->
+<!--=                                                                    =-->
+<!--=                            Warning                                 =-->
+<!--=                                                                    =-->
+<!--=               If you change the name of this file,                 =-->
+<!--=            you have to change the configuration in pom too         =-->
+<!--=                                                                    =-->
+<!--======================================================================-->
+<suite name="Sample Playground Suite">
+    <test name="Sample Playground Test" parallel="methods">
+        <packages>
+            <package name="ch.seleniumConsulting.selenium.Aufgabe.*"/>
+        </packages>
+    </test>
+</suite>
