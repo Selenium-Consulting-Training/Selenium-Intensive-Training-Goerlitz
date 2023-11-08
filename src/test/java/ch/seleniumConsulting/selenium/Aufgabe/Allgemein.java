@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 
 public class Allgemein {
 
-    public static final String EVENT_BASE_URL = "https://selenium-consulting.ch/event/TEAMNAME/";
+    public static final String EVENT_BASE_URL = "https://seleniumtrainingplattform.azurewebsites.net/event/viridium/";
 
     @Test
     public void ChromeTest() {
