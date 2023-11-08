@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Selenium CheatSheet</title>
+  </head>
+  <body>
+    
+<style>
+fieldset {
+border: thick solid;
+border-image: linear-gradient(47deg, rgb(152,88,255), rgb(88,108,255)) 1;
+
+width: 500px;
+}
+legend {
+color: #FFF;
+background: linear-gradient(47deg, rgba(152,88,255,1) 0%, rgba(88,108,255,1) 100%);
+font-size: 1.5em;
+padding: 10px;
+margin-left: 50px;
+border-radius: 15px;
+
+}
+fieldset ul li::marker, ol li::marker {
+    color: #9858ff;
+}
+.firstPart {
+    color: #9858ff;
+    font-weight: bold;
+    width: 100px;
+    display: inline-block;
+}
+.orPart {
+    color: #9858ff;
+    font-weight: bold;
+    display: block;
+}
+.singleLiner .firstPart {
+    width: 300px;
+    display: block;
+}
+.singleLiner .secondPart{
+ margin-left:20px;
+    display: block;
+ 
+}
+fieldset.main{
+flex-wrap: wrap;
+max-width:66%;
+width:66%; 
+margin-left: auto; 
+margin-right: auto;
+
+}
+fieldset.main fieldset {
+width: 85%;
+margin-left: auto; 
+margin-right: auto;
+}
+.left{
+	display: inline-block;
+	width: 49%;
+} 
+
+.right {
+	display: inline-block;
+	width: 49%;
+        float:right;
+}
+</style>
+
+<fieldset class="singleLiner main" style="">
+<legend>Selenium Training CheatSheet</legend>
+
+<div class="left"> 
+<div style="margin-top: 20px;"></div>
+<fieldset>
+<legend>Driver Initialization</legend>
+<ul>
+<li><span class="firstPart">Firefox</span><span class="secondPart">WebDriver driver = new FirefoxDriver();</span></li>
+<li><span class="firstPart">Chrome</span><span class="secondPart">WebDriver driver = new ChromeDriver();</span></li>
+<li><span class="firstPart">Edge</span><span class="secondPart">WebDriver driver = new EdgeDriver();</span></li>
+<li><span class="firstPart">Safari</span><span class="secondPart">WebDriver driver = new SafariDriver();</span></li>
+
+</ul>
+</fieldset>
+
+<div style="margin-top: 20px;"></div>
+<fieldset class="singleLiner">
+<legend>Basic Actions</legend>
+<ul>
+
+<li><span class="firstPart">Click</span><span class="secondPart">webElement.click();</span></li>
+<li><span class="firstPart">SendKeys</span><span class="secondPart">webElement.sendKeys("Test");</span></li>
+<li><span class="firstPart">Replace Existing Text</span><span class="secondPart">webElement.clear();</span><span class="secondPart">webElement.sendKeys("Test");</span><span class="orPart">or</span><span class="secondPart">webElement.sendKeys(Keys.chord(Keys.CONTROL, "a") , "Test");</span></li>
+<li><span class="firstPart">GetAttributes</span><span class="secondPart">webElement.getAttribute("class");</span></li>
+<li><span class="firstPart">GetText</span><span class="secondPart">webElement.getText();</span></li>
+
+</ul>
+</fieldset>
+
+
+<div style="margin-top: 20px;"></div>
+<fieldset class="singleLiner">
+<legend>Extended Actions</legend>
+<ul>
+
+<li>
+    <span class="firstPart">Crete Action Class</span>
+    <span class="secondPart">new Actions(webDriver)</span>
+</li>
+<li>
+    <span class="firstPart">Perform Action</span>
+    <span class="secondPart">new Actions(webDriver).action.action2.perform();</span>
+</li>
+</ul>
+</fieldset>
+<div style="margin-top: 20px;"></div>
+<fieldset class="singleLiner">
+<legend>Alerts</legend>
+<ul>
+
+<li>
+    <span class="firstPart">Get Text</span>
+    <span class="secondPart">driver.switchTo().alert().getText()</span>
+</li>
+<li>
+    <span class="firstPart">Accept</span>
+    <span class="secondPart">driver.switchTo().alert()...</span>
+</li>
+<li>
+    <span class="firstPart">Decline</span>
+    <span class="secondPart">driver.switchTo().alert()...</span>
+</li>
+<li>
+    <span class="firstPart">SendKeys</span>
+    <span class="secondPart">driver.switchTo().alert()...</span>
+</li>
+</ul>
+</fieldset>
+
+</div>
+<div class="right">
+
+<div style="margin-top: 20px;"></div>
+<fieldset class="singleLiner">
+<legend>Locators</legend>
+<ul>
+
+<li><span class="firstPart">By ID</span><span class="secondPart">driver.findElement(By.id("q"))</span></li>
+<li><span class="firstPart">By Name</span><span class="secondPart">driver.findElement(By.name("q"))</span></li> 
+<li><span class="firstPart">By TagName</span><span class="secondPart">driver.findElement(By.tagName("span"))</span></li> 
+<li><span class="firstPart">By LinkText</span><span class="secondPart">driver.findElement(By.LinkText("Weiter"))</span></li> 
+<li><span class="firstPart">By CSS-Selector</span><span class="secondPart">driver.findElement(By.cssSelector("#main>.menu>a"))</span></li> 
+<li><span class="firstPart">By Xpath</span><span class="secondPart">driver.findElement(By.xpath("//input[@id='q']"))</span></li> 
+
+</ul>
+</fieldset>
+
+<div style="margin-top: 20px;"></div>
+<fieldset class="singleLiner">
+<legend>XPaths</legend>
+<ul>
+<li>
+    <span class="firstPart">DIV</span>
+    <span class="secondPart">//div</span>
+</li>
+<li>
+    <span class="firstPart">div span</span>
+    <span class="secondPart">//div//span</span>
+</li>
+<li>
+    <span class="firstPart">div > span</span>
+    <span class="secondPart">//div/span</span>
+</li>
+<li>
+    <span class="firstPart">Attribute ID</span>
+    <span class="secondPart">//*[@id="id"]</span>
+</li>
+<li>
+    <span class="firstPart">Input with Type submit </span>
+    <span class="secondPart">//input[@type="submit"]</span>
+</li>
+</ul>
+</fieldset>
+
+
+<div style="margin-top: 20px;"></div>
+<fieldset class="singleLiner">
+<legend>Navigation</legend>
+<ul>
+
+<li>
+    <span class="firstPart">To URL</span>
+    <span class="secondPart">driver.get("http://www.selenium-consulting.ch");</span>
+    <span class="orPart">or</span>
+    <span class="secondPart">driver.navigate().to("http://www.selenium-consulting.ch");</span>
+</li>
+<li>
+    <span class="firstPart">Refresh Page</span>
+    <span class="secondPart">driver.navigate().refresh();</span>
+</li>
+<li>
+    <span class="firstPart">Navigate forwards in History</span>
+    <span class="secondPart">driver.navigate().forward();</span>
+</li>
+<li>
+    <span class="firstPart">Navigate backwards in History</span>
+    <span class="secondPart">driver.navigate().backward();</span>
+</li>
+</ul>
+</fieldset>
+
+
+<div style="margin-top: 20px;"></div>
+<fieldset class="singleLiner">
+<legend>Window</legend>
+<ul>
+
+<li>
+    <span class="firstPart">Get Actual Window Handle</span>
+    <span class="secondPart">driver.getWindowHandle()</span>
+</li>
+<li>
+    <span class="firstPart">Get All Window Handles</span>
+    <span class="secondPart">driver.getWindowHandles()</span>
+</li>
+<li>
+    <span class="firstPart">Switch Window</span>
+    <span class="secondPart">driver.switchTo()...</span>
+</li>
+</ul>
+</fieldset>
+</div>
+</fieldset>
+  </body>
+</html>
